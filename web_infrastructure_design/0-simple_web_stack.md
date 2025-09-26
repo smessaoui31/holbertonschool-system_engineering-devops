@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/web_infrastructure_design/images/1*iBstDyO1wFNbfs3X70Jy7w.webp" alt="Webstackserver" width="400" />
+  <img src="/web_infrastructure_design/images/1*iBstDyO1wFNbfs3X70Jy7w.webp" alt="Webstackserver" width="800" />
 </p>
 
 # Simple Web Infrastructure
