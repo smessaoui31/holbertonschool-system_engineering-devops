@@ -30,28 +30,3 @@ The result is a small but realistic production-style setup that beginners can un
 > In short: we **remove SPOFs** at the edge (LB), and we **isolate roles** (web/app/db) to make the system healthier and easier to grow.
 
 ---
-
-## High-Level Diagram (Mermaid)
-
-
-
-```mermaid
-graph LR
-  U[User Browser] --> DNS[DNS]
-  DNS --> VIP[Virtual IP (shared by LB1/LB2)]
-
-  %% Load balancer cluster
-  VIP --> LB1[HAProxy LB1]
-  VIP --> LB2[HAProxy LB2]
-  LB1 -. heartbeat .- LB2
-
-  %% Web/App/DB split
-  LB1 --> W[Web Server (Nginx)]
-  LB2 --> W
-
-  W --> A[App Server]
-  A --> D[(MySQL DB)]
-
-  %% Notes:
-  %% - VIP floats between LB1 and LB2 (Active-Passive or Active-Active with health checks)
-  %% - Web/App/DB live on separate servers
